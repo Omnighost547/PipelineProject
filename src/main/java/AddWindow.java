@@ -3,7 +3,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class MainGUI {
+public class AddWindow {
+
     private JFrame jFrame;
     private JPanel jPanel;
     private JTextField firstName;
@@ -20,17 +21,17 @@ public class MainGUI {
     private JLabel phoneLable;
     private JLabel DOBLable;
 
-    private Button addContact;
-    private Button searchContact;
+    private Button backToMain;
 
-    //Constructor//
-    public MainGUI(){
-        GUI();
+    //Constructor
+    public AddWindow()
+    {
+        AddWindowGUI();
     }
 
-    public void GUI()
+    public void AddWindowGUI()
     {
-        jFrame = new JFrame("Add Window");
+        jFrame = new JFrame("Add Contact");
         jFrame.setVisible(true);
 
         jFrame.setSize(600,600);
@@ -57,12 +58,11 @@ public class MainGUI {
         DOBLable = new JLabel("Date of Birth");
         dateOfBirth = new JTextField("");
 
-        addContact = new Button("Add to Contact");
-
-        searchContact = new Button("Back To Contact Book");
-        searchContact.addActionListener(new ActionListener() {
+        backToMain = new Button("Back To Contact Book");
+        backToMain.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 SearchWindow searchWindow = new SearchWindow();
                 searchWindow.SearchWindowGUI();
             }
@@ -86,13 +86,12 @@ public class MainGUI {
         jPanel.add(DOBLable);
         jPanel.add(dateOfBirth);
 
-        jPanel.add(addContact);
-        jPanel.add(searchContact);
+        jPanel.add(backToMain);
 
         jFrame.add(jPanel);
     }
 
     public static void main(String[] args) {
-        new MainGUI();
+        new AddWindow();
     }
 }
