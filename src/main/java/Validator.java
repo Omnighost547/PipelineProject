@@ -11,7 +11,7 @@ public class Validator {
     //variables used in class
     private int notification;
     final private String namePattern = "^[A-Z][a-b]";
-    final private String secondNamePattern = "^[A-Z][a-b]";
+    final private String secondNamePattern = "^[A-Z][a-b]";//marge together
     final private String phoneNumberPattern = "[0-9]";
     final private String dobPattern = "[0-9]{2}\\[0-9]{2}\\[0-9]{4}";
     final private String eirCodePattern = "([AC-FHKNPRTV-Y]\\d{2}|D6W)[0-9AC-FHKNPRTV-Y]{4}";
