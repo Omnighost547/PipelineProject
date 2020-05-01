@@ -1,7 +1,11 @@
+package ie.gmit.pm;
+
+
 /*
- * This class is responsible for validating that input mach pattern
+ * This class verifies is user entering correct format data
  * Author: Paulius Miliunas
  * For: Software with Tests pipeline project
+ *
  */
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
@@ -10,10 +14,10 @@ public class Validator {
 
     //variables used in class
     private int notification;
-    final private String namePattern = "^[A-Z][a-b]";
-    final private String phoneNumberPattern = "[0-9]";
-    final private String dobPattern = "[0-9]{2}\\[0-9]{2}\\[0-9]{4}";
-    final private String eirCodePattern = "([AC-FHKNPRTV-Y]\\d{2}|D6W)[0-9AC-FHKNPRTV-Y]{4}";
+    final private String namePattern = "^[A-Z][a-z]+";
+    final private String phoneNumberPattern = "[0-9]+";
+    final private String dobPattern = "[0-9]{2}/[0-9]{2}/[0-9]{4}";
+    final private String eirCodePattern = "^[AC-FHKNPRTV-Y]\\d[0-9W][ -]?[0-9AC-FHKNPRTV-Y]{4}$";
     private Pattern pattern;
     private Matcher matcher;
 
@@ -27,7 +31,7 @@ public class Validator {
         if(matcher.matches()){
             notification = 0;
         }else{
-            notification = 1;
+            notification = 1;//
         }
         return notification;
     }
