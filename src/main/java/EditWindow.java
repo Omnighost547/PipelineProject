@@ -1,92 +1,79 @@
-import sun.applet.Main;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.lang.reflect.Field;
 
-public class SearchWindow implements ActionListener{
+public class EditWindow implements ActionListener{
 
-    JLabel firstName,lastName,address,city, phoneNumber,dateOfBirth;
+    JTextField firstName,lastName,address,city, phoneNumber,dateOfBirth;
     JLabel firstNameLable,lastNameLable,addressLable,cityLable,phoneNumberLable,dateOfBirthLable, contactbook;
-    JButton editContact, deleteContact, backToContactBook;
+    JButton doneEdit, backToContactBook;
 
-    SearchWindow(){
+    EditWindow(){
 
         JFrame f= new JFrame();
-        //f.setBackground(Color.GREEN);
+        //f.setBackground(Color.RED);
 
-        contactbook = new JLabel("Search Contact");
+        contactbook = new JLabel("Edit Details");
         contactbook.setBounds(150,10,150,20);
         Font bigFont = contactbook.getFont().deriveFont(Font.BOLD, 20f);
         contactbook.setFont(bigFont);
 
-
         firstNameLable = new JLabel("First Name");
         firstNameLable.setBounds(50,50,150,20);
-        //Get Name From DataBase
-        firstName = new JLabel();
+        //Get Name to edit//
+        firstName =new JTextField();
         firstName.setBounds(150,50,200,20);
-
 
         lastNameLable = new JLabel("Last Name");
         lastNameLable.setBounds(50,70,150,20);
-        //Get Name From DataBase
-        lastName = new JLabel();
+        //Get Name to edit//
+        lastName=new JTextField();
         lastName.setBounds(150,70,200,20);
 
         addressLable = new JLabel("Address");
         addressLable.setBounds(50,90,150,20);
-        //Get Address From DataBase
-        address = new JLabel();
+        //Get Address to edit//
+        address=new JTextField();
         address.setBounds(150,90,200,20);
 
         cityLable = new JLabel("City");
         cityLable.setBounds(50,110,150,20);
-        //Get City From DataBase
-        city = new JLabel();
+        //Get City to edit//
+        city=new JTextField();
         city.setBounds(150,110,200,20);
 
         phoneNumberLable = new JLabel("Phone Number");
         phoneNumberLable.setBounds(50,130,150,20);
-        //Get Phone Number From DataBase
-        phoneNumber = new JLabel();
+        //Get PhoneNumber to edit//
+        phoneNumber=new JTextField();
         phoneNumber.setBounds(150,130,200,20);
 
         dateOfBirthLable = new JLabel("Date of Birth");
         dateOfBirthLable.setBounds(50,150,150,20);
-        dateOfBirth = new JLabel();
+        //Get Date of birth to edit//
+        dateOfBirth=new JTextField();
         dateOfBirth.setBounds(150,150,200,20);
 
-        editContact = new JButton("Edit Contact");
-        editContact.setBounds(0,200,200,50);
-        editContact.addActionListener(new ActionListener() {
+        doneEdit=new JButton("Done Editing");
+        doneEdit.setBounds(0,200,200,50);
+        doneEdit.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                EditWindow editWindow = new EditWindow();
+                //save details into database//
+                //go back to homepage//
+                MainGUI mainGUI = new MainGUI();
                 f.dispose();
-
-            }
-        });
-
-
-        deleteContact = new JButton("Delete Contact");
-        deleteContact.setBounds( 200,200,200,50);
-        deleteContact.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                //Call the Delete contact from Database Function Here//
             }
         });
 
         backToContactBook = new JButton("Contact Book");
-        backToContactBook.setBounds( 100,250,200,50);
+        backToContactBook.setBounds( 200,200,200,50);
         backToContactBook.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 MainGUI mainGUI = new MainGUI();
                 f.dispose();
-
             }
         });
 
@@ -103,11 +90,10 @@ public class SearchWindow implements ActionListener{
         f.add(phoneNumber);
         f.add(dateOfBirthLable);
         f.add(dateOfBirth);
-        f.add(editContact);
-        f.add(deleteContact);
+        f.add(doneEdit);
         f.add(backToContactBook);
 
-        f.setSize(415,350);
+        f.setSize(415,300);
         f.setLayout(null);
         f.setVisible(true);
     }
@@ -130,5 +116,5 @@ public class SearchWindow implements ActionListener{
          */
     }
     public static void main(String[] args) {
-        new SearchWindow();
+        new EditWindow();
     } }
