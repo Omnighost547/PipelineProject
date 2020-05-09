@@ -3,60 +3,60 @@ import java.awt.*;
 import java.awt.event.*;
 import java.lang.reflect.Field;
 
-public class EditWindow implements ActionListener{
+public class EditWindow implements ActionListener {
 
-    JTextField firstName,lastName,address,city, phoneNumber,dateOfBirth;
-    JLabel firstNameLable,lastNameLable,addressLable,cityLable,phoneNumberLable,dateOfBirthLable, contactbook;
+    JTextField firstName, lastName, address, city, phoneNumber, dateOfBirth;
+    JLabel firstNameLable, lastNameLable, addressLable, cityLable, phoneNumberLable, dateOfBirthLable, contactbook;
     JButton doneEdit, backToContactBook;
 
-    EditWindow(){
+    EditWindow() {
 
-        JFrame f= new JFrame();
+        JFrame f = new JFrame();
         //f.setBackground(Color.RED);
 
         contactbook = new JLabel("Edit Details");
-        contactbook.setBounds(150,10,150,20);
+        contactbook.setBounds(150, 10, 150, 20);
         Font bigFont = contactbook.getFont().deriveFont(Font.BOLD, 20f);
         contactbook.setFont(bigFont);
 
         firstNameLable = new JLabel("First Name");
-        firstNameLable.setBounds(50,50,150,20);
+        firstNameLable.setBounds(50, 50, 150, 20);
         //Get Name to edit//
-        firstName =new JTextField();
-        firstName.setBounds(150,50,200,20);
+        firstName = new JTextField("Edit First Name");
+        firstName.setBounds(150, 50, 200, 20);
 
         lastNameLable = new JLabel("Last Name");
-        lastNameLable.setBounds(50,70,150,20);
+        lastNameLable.setBounds(50, 70, 150, 20);
         //Get Name to edit//
-        lastName=new JTextField();
-        lastName.setBounds(150,70,200,20);
+        lastName = new JTextField("Edit Last Name");
+        lastName.setBounds(150, 70, 200, 20);
 
         addressLable = new JLabel("Address");
-        addressLable.setBounds(50,90,150,20);
+        addressLable.setBounds(50, 90, 150, 20);
         //Get Address to edit//
-        address=new JTextField();
-        address.setBounds(150,90,200,20);
+        address = new JTextField("Edit Address");
+        address.setBounds(150, 90, 200, 20);
 
         cityLable = new JLabel("City");
-        cityLable.setBounds(50,110,150,20);
+        cityLable.setBounds(50, 110, 150, 20);
         //Get City to edit//
-        city=new JTextField();
-        city.setBounds(150,110,200,20);
+        city = new JTextField("Edit City");
+        city.setBounds(150, 110, 200, 20);
 
         phoneNumberLable = new JLabel("Phone Number");
-        phoneNumberLable.setBounds(50,130,150,20);
+        phoneNumberLable.setBounds(50, 130, 150, 20);
         //Get PhoneNumber to edit//
-        phoneNumber=new JTextField();
-        phoneNumber.setBounds(150,130,200,20);
+        phoneNumber = new JTextField("Edit Phone Number");
+        phoneNumber.setBounds(150, 130, 200, 20);
 
         dateOfBirthLable = new JLabel("Date of Birth");
-        dateOfBirthLable.setBounds(50,150,150,20);
+        dateOfBirthLable.setBounds(50, 150, 150, 20);
         //Get Date of birth to edit//
-        dateOfBirth=new JTextField();
-        dateOfBirth.setBounds(150,150,200,20);
+        dateOfBirth = new JTextField("Edit Date of Birth");
+        dateOfBirth.setBounds(150, 150, 200, 20);
 
-        doneEdit=new JButton("Done Editing");
-        doneEdit.setBounds(0,200,200,50);
+        doneEdit = new JButton("Done Editing");
+        doneEdit.setBounds(0, 200, 200, 50);
         doneEdit.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -68,7 +68,7 @@ public class EditWindow implements ActionListener{
         });
 
         backToContactBook = new JButton("Contact Book");
-        backToContactBook.setBounds( 200,200,200,50);
+        backToContactBook.setBounds(200, 200, 200, 50);
         backToContactBook.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -93,28 +93,15 @@ public class EditWindow implements ActionListener{
         f.add(doneEdit);
         f.add(backToContactBook);
 
-        f.setSize(415,300);
+        f.setSize(415, 300);
         f.setLayout(null);
         f.setVisible(true);
     }
+
     public void actionPerformed(ActionEvent e) {
-
-        /*
-        String s1=tf1.getText();
-        String s2=tf2.getText();
-        int a=Integer.parseInt(s1);
-        int b=Integer.parseInt(s2);
-        int c=0;
-        if(e.getSource()==b1){
-            c=a+b;
-        }else if(e.getSource()==b2){
-            c=a-b;
-        }
-        String result=String.valueOf(c);
-        tf3.setText(result);
-
-         */
     }
-    public static void main(String[] args) {
-        new EditWindow();
-    } }
+
+}
+    //public static void main(String[] args) {
+     //   new EditWindow();
+    //} }

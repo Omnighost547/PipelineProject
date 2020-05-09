@@ -10,103 +10,101 @@ import java.security.PublicKey;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class TestMainGUI {
+public class TestEditWindow {
     private Selenium selenium;
-    MainGUI mainGUI;
+    EditWindow editWindow;
 
     @BeforeEach
     public void setup() throws Exception {
-             mainGUI = new MainGUI();
+        editWindow = new EditWindow();
     }
 
     //First Name Testing//
     @Test
     public void TestFirstNameLable() throws Exception {
-        String str = mainGUI.firstNameLable.getText();
+        String str = editWindow.firstNameLable.getText();
         assertEquals("First Name", str);
     }
 
     @Test
     public void TestFirstName() throws Exception {
-        String str = mainGUI.firstName.getText();
-        assertEquals("Enter First Name", str);
+        String str = editWindow.firstName.getText();
+        assertEquals("Edit First Name", str);
     }
 
     //Last Name Testing//
     @Test
     public void TestLastNameLable() throws Exception {
-        String str = mainGUI.lastNameLable.getText();
+        String str = editWindow.lastNameLable.getText();
         assertEquals("Last Name", str);
     }
 
     @Test
     public void TestLastName() throws Exception {
-        String str = mainGUI.lastName.getText();
-        assertEquals("Enter Last Name", str);
+        String str = editWindow.lastName.getText();
+        assertEquals("Edit Last Name", str);
     }
 
     //Address Testing//
     @Test
     public void TestAddressLable() throws Exception {
-        String str = mainGUI.addressLable.getText();
+        String str = editWindow.addressLable.getText();
         assertEquals("Address", str);
     }
 
     @Test
     public void TestAddress() throws Exception {
-        String str = mainGUI.address.getText();
-        assertEquals("Enter Address", str);
+        String str = editWindow.address.getText();
+        assertEquals("Edit Address", str);
     }
 
     //City Testing//
     @Test
     public void TestCityLable() throws Exception {
-        String str = mainGUI.cityLable.getText();
+        String str = editWindow.cityLable.getText();
         assertEquals("City", str);
     }
 
     @Test
     public void TestCity() throws Exception {
-        String str = mainGUI.city.getText();
-        assertEquals("Enter City", str);
+        String str = editWindow.city.getText();
+        assertEquals("Edit City", str);
     }
 
     //Phone Number Testing//
     @Test
     public void TestPhoneNumberLable() throws Exception {
-        String str = mainGUI.phoneNumberLable.getText();
+        String str = editWindow.phoneNumberLable.getText();
         assertEquals("Phone Number", str);
     }
 
     @Test
     public void TestPhoneNumber() throws Exception {
-        String str = mainGUI.phoneNumber.getText();
-        assertEquals("Enter Phone Number", str);
+        String str = editWindow.phoneNumber.getText();
+        assertEquals("Edit Phone Number", str);
     }
 
     //Date of Birth Testing//
     @Test
     public void TestDOBLable() throws Exception {
-        String str = mainGUI.dateOfBirthLable.getText();
+        String str = editWindow.dateOfBirthLable.getText();
         assertEquals("Date of Birth", str);
     }
 
     @Test
     public void TestDOB() throws Exception {
-        String str = mainGUI.dateOfBirth.getText();
-        assertEquals("Enter Data of Birth", str);
+        String str = editWindow.dateOfBirth.getText();
+        assertEquals("Edit Date of Birth", str);
     }
 
-    //Not sure if this is right//
-    //Test the Add Contact button
     @Test
-    public void TestAddContactButton() throws Exception{
-        mainGUI.addContact.addActionListener(mainGUI.addContact.getAction());
+    public void TestDoneEditButton() throws Exception{
+        editWindow.doneEdit.addActionListener(editWindow.doneEdit.getAction());
     }
 
-    //Test the Search Contact button
     @Test
-    public void TestSearchContactButton() throws Exception{
-        mainGUI.searchContact.addActionListener(mainGUI.searchContact.getAction());
+    public void TestBackToContactBookButton() throws Exception{
+        editWindow.backToContactBook.addActionListener(editWindow.backToContactBook.getAction());
     }
+
 }

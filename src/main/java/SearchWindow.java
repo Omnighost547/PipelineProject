@@ -25,37 +25,37 @@ public class SearchWindow implements ActionListener{
         firstNameLable = new JLabel("First Name");
         firstNameLable.setBounds(50,50,150,20);
         //Get Name From DataBase
-        firstName = new JLabel();
+        firstName = new JLabel("Fatmir");
         firstName.setBounds(150,50,200,20);
 
 
         lastNameLable = new JLabel("Last Name");
         lastNameLable.setBounds(50,70,150,20);
         //Get Name From DataBase
-        lastName = new JLabel();
+        lastName = new JLabel("Gusani");
         lastName.setBounds(150,70,200,20);
 
         addressLable = new JLabel("Address");
         addressLable.setBounds(50,90,150,20);
         //Get Address From DataBase
-        address = new JLabel();
+        address = new JLabel("123 Fake street");
         address.setBounds(150,90,200,20);
 
         cityLable = new JLabel("City");
         cityLable.setBounds(50,110,150,20);
         //Get City From DataBase
-        city = new JLabel();
+        city = new JLabel("Galway");
         city.setBounds(150,110,200,20);
 
         phoneNumberLable = new JLabel("Phone Number");
         phoneNumberLable.setBounds(50,130,150,20);
         //Get Phone Number From DataBase
-        phoneNumber = new JLabel();
+        phoneNumber = new JLabel("087 430 7730");
         phoneNumber.setBounds(150,130,200,20);
 
         dateOfBirthLable = new JLabel("Date of Birth");
         dateOfBirthLable.setBounds(50,150,150,20);
-        dateOfBirth = new JLabel();
+        dateOfBirth = new JLabel("April 5th");
         dateOfBirth.setBounds(150,150,200,20);
 
         editContact = new JButton("Edit Contact");
@@ -65,7 +65,6 @@ public class SearchWindow implements ActionListener{
             public void actionPerformed(ActionEvent e) {
                 EditWindow editWindow = new EditWindow();
                 f.dispose();
-
             }
         });
 
@@ -129,6 +128,7 @@ public class SearchWindow implements ActionListener{
 
          */
     }
-    public static void main(String[] args) {
-        new SearchWindow();
-    } }
+    //public static void main(String[] args) {
+    //    new SearchWindow();
+    //}
+}

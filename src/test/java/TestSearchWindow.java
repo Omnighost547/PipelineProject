@@ -10,103 +10,109 @@ import java.security.PublicKey;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class TestMainGUI {
+public class TestSearchWindow {
     private Selenium selenium;
-    MainGUI mainGUI;
+    SearchWindow searchWindow;
 
     @BeforeEach
     public void setup() throws Exception {
-             mainGUI = new MainGUI();
+        searchWindow = new SearchWindow();
     }
 
     //First Name Testing//
     @Test
     public void TestFirstNameLable() throws Exception {
-        String str = mainGUI.firstNameLable.getText();
+        String str = searchWindow.firstNameLable.getText();
         assertEquals("First Name", str);
     }
 
     @Test
     public void TestFirstName() throws Exception {
-        String str = mainGUI.firstName.getText();
-        assertEquals("Enter First Name", str);
+        String str = searchWindow.firstName.getText();
+        assertEquals("Fatmir", str);
     }
 
     //Last Name Testing//
     @Test
     public void TestLastNameLable() throws Exception {
-        String str = mainGUI.lastNameLable.getText();
+        String str = searchWindow.lastNameLable.getText();
         assertEquals("Last Name", str);
     }
 
     @Test
     public void TestLastName() throws Exception {
-        String str = mainGUI.lastName.getText();
-        assertEquals("Enter Last Name", str);
+        String str = searchWindow.lastName.getText();
+        assertEquals("Gusani", str);
     }
 
     //Address Testing//
     @Test
     public void TestAddressLable() throws Exception {
-        String str = mainGUI.addressLable.getText();
+        String str = searchWindow.addressLable.getText();
         assertEquals("Address", str);
     }
 
     @Test
     public void TestAddress() throws Exception {
-        String str = mainGUI.address.getText();
-        assertEquals("Enter Address", str);
+        String str = searchWindow.address.getText();
+        assertEquals("123 Fake street", str);
     }
 
     //City Testing//
     @Test
     public void TestCityLable() throws Exception {
-        String str = mainGUI.cityLable.getText();
+        String str = searchWindow.cityLable.getText();
         assertEquals("City", str);
     }
 
     @Test
     public void TestCity() throws Exception {
-        String str = mainGUI.city.getText();
-        assertEquals("Enter City", str);
+        String str = searchWindow.city.getText();
+        assertEquals("Galway", str);
     }
 
     //Phone Number Testing//
     @Test
     public void TestPhoneNumberLable() throws Exception {
-        String str = mainGUI.phoneNumberLable.getText();
+        String str = searchWindow.phoneNumberLable.getText();
         assertEquals("Phone Number", str);
     }
 
     @Test
     public void TestPhoneNumber() throws Exception {
-        String str = mainGUI.phoneNumber.getText();
-        assertEquals("Enter Phone Number", str);
+        String str = searchWindow.phoneNumber.getText();
+        assertEquals("087 430 7730", str);
     }
 
     //Date of Birth Testing//
     @Test
     public void TestDOBLable() throws Exception {
-        String str = mainGUI.dateOfBirthLable.getText();
+        String str = searchWindow.dateOfBirthLable.getText();
         assertEquals("Date of Birth", str);
     }
 
     @Test
     public void TestDOB() throws Exception {
-        String str = mainGUI.dateOfBirth.getText();
-        assertEquals("Enter Data of Birth", str);
+        String str = searchWindow.dateOfBirth.getText();
+        assertEquals("April 5th", str);
     }
 
-    //Not sure if this is right//
-    //Test the Add Contact button
+    //Not Sure if this is right//
+    //Test Back to Contact Book Button//
     @Test
-    public void TestAddContactButton() throws Exception{
-        mainGUI.addContact.addActionListener(mainGUI.addContact.getAction());
+    public void TestBackToContactBookButton() throws Exception{
+        searchWindow.backToContactBook.addActionListener(searchWindow.backToContactBook.getAction());
     }
 
-    //Test the Search Contact button
+    //Test Delete Contact Button//
     @Test
-    public void TestSearchContactButton() throws Exception{
-        mainGUI.searchContact.addActionListener(mainGUI.searchContact.getAction());
+    public void TestDeleteContactButton() throws Exception{
+        searchWindow.deleteContact.addActionListener(searchWindow.deleteContact.getAction());
+    }
+
+    //Test Edit Contact Button//
+    @Test
+    public void TestEditContactButton() throws Exception{
+        searchWindow.editContact.addActionListener(searchWindow.editContact.getAction());
     }
 }
