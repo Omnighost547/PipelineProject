@@ -1,4 +1,4 @@
-package ie.gmit.pm;
+package ie.gmit;
 
 
 /*
