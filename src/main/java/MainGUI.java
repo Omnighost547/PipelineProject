@@ -1,95 +1,136 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
+import java.lang.reflect.Field;
 
-public class MainGUI {
-    private JFrame jFrame;
-    private JPanel jPanel;
-    private JTextField firstName;
-    private JTextField lastName;
-    private JTextField address;
-    private JTextField city;
-    private JTextField phoneNumber;
-    private JTextField dateOfBirth;
+public class MainGUI implements ActionListener {
 
-    private JLabel nameLable;
-    private JLabel lastLable;
-    private JLabel addressLable;
-    private JLabel cityLable;
-    private JLabel phoneLable;
-    private JLabel DOBLable;
+    JTextField firstName, lastName, address1,address2, city, phoneNumber, dateOfBirth, eircode;
+    JLabel firstNameLable, lastNameLable, address1Lable,address2Lable, cityLable, phoneNumberLable, dateOfBirthLable,eircodeLable,contactbook;
+    JButton addContact, searchContact;
 
-    private Button addContact;
-    private Button searchContact;
+    MainGUI() {
 
-    //Constructor//
-    public MainGUI(){
-        GUI();
-    }
+        JFrame f = new JFrame();
+        f.setBackground(Color.RED);
 
-    public void GUI()
-    {
-        jFrame = new JFrame("Add Window");
-        jFrame.setVisible(true);
+        contactbook = new JLabel("Contact Book");
+        contactbook.setBounds(150, 10, 150, 20);
+        Font bigFont = contactbook.getFont().deriveFont(Font.BOLD, 20f);
+        contactbook.setFont(bigFont);
 
-        jFrame.setSize(600,600);
-        jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        firstNameLable = new JLabel("First Name");
+        firstNameLable.setBounds(50, 50, 150, 20);
+        //The Value in here is test, thats why testing was good.//
+        firstName = new JTextField("pual");
+        firstName.setBounds(150, 50, 200, 20);
 
-        jPanel = new JPanel();
-        jPanel.setBackground(Color.GREEN);
-
-        nameLable = new JLabel("First Name");
-        firstName = new JTextField("");
-
-        lastLable = new JLabel("Last Name");
+        lastNameLable = new JLabel("Last Name");
+        lastNameLable.setBounds(50, 70, 150, 20);
         lastName = new JTextField("");
+        lastName.setBounds(150, 70, 200, 20);
 
-        addressLable = new JLabel("Address");
-        address = new JTextField("");
+        address1Lable = new JLabel("Address 1");
+        address1Lable.setBounds(50, 90, 150, 20);
+        address1 = new JTextField("");
+        address1.setBounds(150, 90, 200, 20);
+
+        address2Lable = new JLabel("Address 2");
+        address2Lable.setBounds(50, 110, 150, 20);
+        address2 = new JTextField("");
+        address2.setBounds(150, 110, 200, 20);
 
         cityLable = new JLabel("City");
+        cityLable.setBounds(50, 130, 150, 20);
         city = new JTextField("");
+        city.setBounds(150, 130, 200, 20);
 
-        phoneLable = new JLabel("Phone Number");
+        phoneNumberLable = new JLabel("Phone Number");
+        phoneNumberLable.setBounds(50, 150, 150, 20);
         phoneNumber = new JTextField("");
+        phoneNumber.setBounds(150, 150, 200, 20);
 
-        DOBLable = new JLabel("Date of Birth");
+        dateOfBirthLable = new JLabel("Date of Birth");
+        dateOfBirthLable.setBounds(50, 170, 150, 20);
         dateOfBirth = new JTextField("");
+        dateOfBirth.setBounds(150, 170, 200, 20);
 
-        addContact = new Button("Add to Contact");
+        eircodeLable = new JLabel("Eir Code");
+        eircodeLable.setBounds(50, 190, 150, 20);
+        eircode = new JTextField("");
+        eircode.setBounds(150, 190, 200, 20);
 
-        searchContact = new Button("Back To Contact Book");
-        searchContact.addActionListener(new ActionListener() {
+        addContact = new JButton("Add Contact");
+        addContact.setBounds(0, 220, 200, 50);
+        addContact.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                SearchWindow searchWindow = new SearchWindow();
-                searchWindow.SearchWindowGUI();
+                //Functins//
+                //String message = addContact(name,second name,city);
+                ContactController contactController = new ContactController();
+                contactController.saveContact(firstName.getText(), lastName.getText(), address1.getText(),address2.getText(),
+                        city.getText(), phoneNumber.getText(),dateOfBirth.getText(), eircode.getText());
+
+                System.out.println(firstName.getText());
             }
         });
 
-        jPanel.add(nameLable);
-        jPanel.add(firstName);
+        searchContact = new JButton("Search Contact");
+        searchContact.setBounds(200, 220, 200, 50);
 
-        jPanel.add(lastLable);
-        jPanel.add(lastName);
+        //searchContact.addActionListener(this);
+        searchContact.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                firstName.getText();
+                new SearchWindow();
 
-        jPanel.add(addressLable);
-        jPanel.add(address);
+                f.dispose();
+            }
+        });
 
-        jPanel.add(cityLable);
-        jPanel.add(city);
+        f.add(contactbook);
+        f.add(firstNameLable);
+        f.add(firstName);
+        f.add(lastNameLable);
+        f.add(lastName);
+        f.add(address1Lable);
+        f.add(address1);
+        f.add(address2Lable);
+        f.add(address2);
+        f.add(cityLable);
+        f.add(city);
+        f.add(phoneNumberLable);
+        f.add(phoneNumber);
+        f.add(dateOfBirthLable);
+        f.add(dateOfBirth);
+        f.add(eircodeLable);
+        f.add(eircode);
+        f.add(addContact);
+        f.add(searchContact);
 
-        jPanel.add(phoneLable);
-        jPanel.add(phoneNumber);
+        f.setSize(415, 330);
+        f.setLayout(null);
+        f.setVisible(true);
+    }
 
-        jPanel.add(DOBLable);
-        jPanel.add(dateOfBirth);
+    public void actionPerformed(ActionEvent e) {
 
-        jPanel.add(addContact);
-        jPanel.add(searchContact);
+        /*
+        String s1=tf1.getText();
+        String s2=tf2.getText();
+        int a=Integer.parseInt(s1);
+        int b=Integer.parseInt(s2);
+        int c=0;
+        if(e.getSource()==b1){
+            c=a+b;
+        }else if(e.getSource()==b2){
+            c=a-b;
+        }
+        String result=String.valueOf(c);
+        tf3.setText(result);
 
-        jFrame.add(jPanel);
+         */
     }
 
     public static void main(String[] args) {
