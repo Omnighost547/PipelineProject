@@ -10,27 +10,32 @@ public class Contact {
     private String eirCode;
 
     //constructor for contact with mane, second name
-    public Contact(String name, String secondName) {
-        this.name = name;
-        this.secondName = secondName;
-    }
+    public Contact(String name, String secondName)  {
+
+            this.name = name;
+            this.secondName = secondName;
+            }
+
     //constructor for contact with mane, second name, prone number
-    public Contact(String name, String secondName, String phoneNr) {
-        this.name = name;
-        this.secondName = secondName;
-        this.phoneNr = phoneNr;
+    public Contact(String name, String secondName, String phoneNr)  {
+            this.name = name;
+            this.secondName = secondName;
+            this.phoneNr = phoneNr;
+
     }
     //constructor for contact with all entries
-    public Contact(String name, String secondName, String addressLine1, String addressLine2, String city, String phoneNr, String DOB, String eirCode) {
-        this.name = name;
-        this.secondName = secondName;
-        this.addressLine1 = addressLine1;
-        this.addressLine2 = addressLine2;
-        this.city = city;
-        this.phoneNr = phoneNr;
-        this.DOB = DOB;
-        this.eirCode = eirCode;
-    }
+    public Contact(String name, String secondName, String addressLine1, String addressLine2, String city, String phoneNr, String DOB, String eirCode)  {
+
+            this.name = name;
+            this.secondName = secondName;
+            this.addressLine1 = addressLine1;
+            this.addressLine2 = addressLine2;
+            this.city = city;
+            this.phoneNr = phoneNr;
+            this.DOB = DOB;
+            this.eirCode = eirCode;
+        }
+
     //getter and setters
 
 
