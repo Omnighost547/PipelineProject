@@ -22,42 +22,42 @@ public class MainGUI implements ActionListener {
         firstNameLable = new JLabel("First Name");
         firstNameLable.setBounds(50, 50, 150, 20);
         //The Value in here is test, thats why testing was good.//
-        firstName = new JTextField("Enter First Name");
+        firstName = new JTextField("");
         firstName.setBounds(150, 50, 200, 20);
 
         lastNameLable = new JLabel("Last Name");
         lastNameLable.setBounds(50, 70, 150, 20);
-        lastName = new JTextField("Enter Last Name");
+        lastName = new JTextField("");
         lastName.setBounds(150, 70, 200, 20);
 
         address1Lable = new JLabel("Address 1");
         address1Lable.setBounds(50, 90, 150, 20);
-        address1 = new JTextField("Enter Address 1");
+        address1 = new JTextField("");
         address1.setBounds(150, 90, 200, 20);
 
         address2Lable = new JLabel("Address 2");
         address2Lable.setBounds(50, 110, 150, 20);
-        address2 = new JTextField("Enter Address 2");
+        address2 = new JTextField("");
         address2.setBounds(150, 110, 200, 20);
 
         cityLable = new JLabel("City");
         cityLable.setBounds(50, 130, 150, 20);
-        city = new JTextField("Enter City");
+        city = new JTextField("");
         city.setBounds(150, 130, 200, 20);
 
         phoneNumberLable = new JLabel("Phone Number");
         phoneNumberLable.setBounds(50, 150, 150, 20);
-        phoneNumber = new JTextField("Enter Phone Number");
+        phoneNumber = new JTextField("");
         phoneNumber.setBounds(150, 150, 200, 20);
 
         dateOfBirthLable = new JLabel("Date of Birth");
         dateOfBirthLable.setBounds(50, 170, 150, 20);
-        dateOfBirth = new JTextField("Enter Data of Birth");
+        dateOfBirth = new JTextField("");
         dateOfBirth.setBounds(150, 170, 200, 20);
 
         eircodeLable = new JLabel("Eir Code");
         eircodeLable.setBounds(50, 190, 150, 20);
-        eircode = new JTextField("Enter Eir Code");
+        eircode = new JTextField("");
         eircode.setBounds(150, 190, 200, 20);
 
         addContact = new JButton("Add Contact");
@@ -65,7 +65,9 @@ public class MainGUI implements ActionListener {
         addContact.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //Functins
+                //Functins//
+                //String message = addContact(name,second name,city);
+                System.out.println(firstName.getText());
             }
         });
 

@@ -25,48 +25,48 @@ public class SearchWindow implements ActionListener{
         firstNameLable = new JLabel("First Name");
         firstNameLable.setBounds(50,50,150,20);
         //Get Name From DataBase
-        firstName = new JLabel("Fatmir");
+        firstName = new JLabel("");
         firstName.setBounds(150,50,200,20);
 
 
         lastNameLable = new JLabel("Last Name");
         lastNameLable.setBounds(50,70,150,20);
         //Get Name From DataBase
-        lastName = new JLabel("Gusani");
+        lastName = new JLabel("");
         lastName.setBounds(150,70,200,20);
 
         address1Lable = new JLabel("Address 1");
         address1Lable.setBounds(50,90,150,20);
         //Get Address From DataBase
-        address1 = new JLabel("123 Fake street");
+        address1 = new JLabel("");
         address1.setBounds(150,90,200,20);
 
         address2Lable = new JLabel("Address 2");
         address2Lable.setBounds(50,110,150,20);
         //Get Address From DataBase
-        address2 = new JLabel("Westside");
+        address2 = new JLabel("");
         address2.setBounds(150,110,200,20);
 
         cityLable = new JLabel("City");
         cityLable.setBounds(50,130,150,20);
         //Get City From DataBase
-        city = new JLabel("Galway");
+        city = new JLabel("");
         city.setBounds(150,130,200,20);
 
         phoneNumberLable = new JLabel("Phone Number");
         phoneNumberLable.setBounds(50,150,150,20);
         //Get Phone Number From DataBase
-        phoneNumber = new JLabel("087 430 7730");
+        phoneNumber = new JLabel("");
         phoneNumber.setBounds(150,150,200,20);
 
         dateOfBirthLable = new JLabel("Date of Birth");
         dateOfBirthLable.setBounds(50,170,150,20);
-        dateOfBirth = new JLabel("April 5th");
+        dateOfBirth = new JLabel("");
         dateOfBirth.setBounds(150,170,200,20);
 
         eircodeLable = new JLabel("Eir Code");
         eircodeLable.setBounds(50,190,150,20);
-        eircode = new JLabel("HN81 HHH");
+        eircode = new JLabel("");
         eircode.setBounds(150,190,200,20);
 
         editContact = new JButton("Edit Contact");

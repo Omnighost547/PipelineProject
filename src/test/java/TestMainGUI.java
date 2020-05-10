@@ -29,7 +29,7 @@ public class TestMainGUI {
     @Test
     public void TestFirstName() throws Exception {
         String str = mainGUI.firstName.getText();
-        assertEquals("Enter First Name", str);
+        assertEquals("", str);
     }
 
     //Last Name Testing//
@@ -42,7 +42,7 @@ public class TestMainGUI {
     @Test
     public void TestLastName() throws Exception {
         String str = mainGUI.lastName.getText();
-        assertEquals("Enter Last Name", str);
+        assertEquals("", str);
     }
 
     //Address Testing//
@@ -55,7 +55,7 @@ public class TestMainGUI {
     @Test
     public void TestAddress1() throws Exception {
         String str = mainGUI.address1.getText();
-        assertEquals("Enter Address 1", str);
+        assertEquals("", str);
     }
 
     @Test
@@ -67,7 +67,7 @@ public class TestMainGUI {
     @Test
     public void TestAddress2() throws Exception {
         String str = mainGUI.address2.getText();
-        assertEquals("Enter Address 2", str);
+        assertEquals("", str);
     }
 
     //City Testing//
@@ -80,7 +80,7 @@ public class TestMainGUI {
     @Test
     public void TestCity() throws Exception {
         String str = mainGUI.city.getText();
-        assertEquals("Enter City", str);
+        assertEquals("", str);
     }
 
     //Phone Number Testing//
@@ -93,7 +93,7 @@ public class TestMainGUI {
     @Test
     public void TestPhoneNumber() throws Exception {
         String str = mainGUI.phoneNumber.getText();
-        assertEquals("Enter Phone Number", str);
+        assertEquals("", str);
     }
 
     //Date of Birth Testing//
@@ -106,7 +106,7 @@ public class TestMainGUI {
     @Test
     public void TestDOB() throws Exception {
         String str = mainGUI.dateOfBirth.getText();
-        assertEquals("Enter Data of Birth", str);
+        assertEquals("", str);
     }
 
     @Test
@@ -118,7 +118,7 @@ public class TestMainGUI {
     @Test
     public void TestEirCode() throws Exception {
         String str = mainGUI.eircode.getText();
-        assertEquals("Enter Eir Code", str);
+        assertEquals("", str);
     }
 
     //Not sure if this is right//

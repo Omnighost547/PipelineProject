@@ -29,7 +29,7 @@ public class TestEditWindow {
     @Test
     public void TestFirstName() throws Exception {
         String str = editWindow.firstName.getText();
-        assertEquals("Edit First Name", str);
+        assertEquals("", str);
     }
 
     //Last Name Testing//
@@ -42,7 +42,7 @@ public class TestEditWindow {
     @Test
     public void TestLastName() throws Exception {
         String str = editWindow.lastName.getText();
-        assertEquals("Edit Last Name", str);
+        assertEquals("", str);
     }
 
     //Address Testing//
@@ -55,7 +55,7 @@ public class TestEditWindow {
     @Test
     public void TestAddress1() throws Exception {
         String str = editWindow.address1.getText();
-        assertEquals("Edit Address 1", str);
+        assertEquals("", str);
     }
 
     @Test
@@ -67,7 +67,7 @@ public class TestEditWindow {
     @Test
     public void TestAddress2() throws Exception {
         String str = editWindow.address2.getText();
-        assertEquals("Edit Address 2", str);
+        assertEquals("", str);
     }
 
     //City Testing//
@@ -80,7 +80,7 @@ public class TestEditWindow {
     @Test
     public void TestCity() throws Exception {
         String str = editWindow.city.getText();
-        assertEquals("Edit City", str);
+        assertEquals("", str);
     }
 
     //Phone Number Testing//
@@ -93,7 +93,7 @@ public class TestEditWindow {
     @Test
     public void TestPhoneNumber() throws Exception {
         String str = editWindow.phoneNumber.getText();
-        assertEquals("Edit Phone Number", str);
+        assertEquals("", str);
     }
 
     //Date of Birth Testing//
@@ -106,7 +106,7 @@ public class TestEditWindow {
     @Test
     public void TestDOB() throws Exception {
         String str = editWindow.dateOfBirth.getText();
-        assertEquals("Edit Date of Birth", str);
+        assertEquals("", str);
     }
 
     @Test
@@ -118,7 +118,7 @@ public class TestEditWindow {
     @Test
     public void TestEirCode() throws Exception {
         String str = editWindow.eircode.getText();
-        assertEquals("Edit Eir Code", str);
+        assertEquals("", str);
     }
 
 

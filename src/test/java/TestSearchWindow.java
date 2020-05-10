@@ -29,7 +29,7 @@ public class TestSearchWindow {
     @Test
     public void TestFirstName() throws Exception {
         String str = searchWindow.firstName.getText();
-        assertEquals("Fatmir", str);
+        assertEquals("", str);
     }
 
     //Last Name Testing//
@@ -42,7 +42,7 @@ public class TestSearchWindow {
     @Test
     public void TestLastName() throws Exception {
         String str = searchWindow.lastName.getText();
-        assertEquals("Gusani", str);
+        assertEquals("", str);
     }
 
     //Address Testing//
@@ -55,7 +55,7 @@ public class TestSearchWindow {
     @Test
     public void TestAddress1() throws Exception {
         String str = searchWindow.address1.getText();
-        assertEquals("123 Fake street", str);
+        assertEquals("", str);
     }
 
     @Test
@@ -67,7 +67,7 @@ public class TestSearchWindow {
     @Test
     public void TestAddress2() throws Exception {
         String str = searchWindow.address2.getText();
-        assertEquals("Westside", str);
+        assertEquals("", str);
     }
 
     //City Testing//
@@ -80,7 +80,7 @@ public class TestSearchWindow {
     @Test
     public void TestCity() throws Exception {
         String str = searchWindow.city.getText();
-        assertEquals("Galway", str);
+        assertEquals("", str);
     }
 
     //Phone Number Testing//
@@ -93,7 +93,7 @@ public class TestSearchWindow {
     @Test
     public void TestPhoneNumber() throws Exception {
         String str = searchWindow.phoneNumber.getText();
-        assertEquals("087 430 7730", str);
+        assertEquals("", str);
     }
 
     //Date of Birth Testing//
@@ -106,7 +106,19 @@ public class TestSearchWindow {
     @Test
     public void TestDOB() throws Exception {
         String str = searchWindow.dateOfBirth.getText();
-        assertEquals("April 5th", str);
+        assertEquals("", str);
+    }
+
+    @Test
+    public void TestEirCodeLable() throws Exception {
+        String str = searchWindow.eircodeLable.getText();
+        assertEquals("Eir Code", str);
+    }
+
+    @Test
+    public void TestEirCode() throws Exception {
+        String str = searchWindow.eircode.getText();
+        assertEquals("", str);
     }
 
     //Not Sure if this is right//
