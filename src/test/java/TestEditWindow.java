@@ -47,15 +47,27 @@ public class TestEditWindow {
 
     //Address Testing//
     @Test
-    public void TestAddressLable() throws Exception {
-        String str = editWindow.addressLable.getText();
-        assertEquals("Address", str);
+    public void TestAddress1Lable() throws Exception {
+        String str = editWindow.address1Lable.getText();
+        assertEquals("Address 1", str);
     }
 
     @Test
-    public void TestAddress() throws Exception {
-        String str = editWindow.address.getText();
-        assertEquals("Edit Address", str);
+    public void TestAddress1() throws Exception {
+        String str = editWindow.address1.getText();
+        assertEquals("Edit Address 1", str);
+    }
+
+    @Test
+    public void TestAddress2Lable() throws Exception {
+        String str = editWindow.address2Lable.getText();
+        assertEquals("Address 2", str);
+    }
+
+    @Test
+    public void TestAddress2() throws Exception {
+        String str = editWindow.address2.getText();
+        assertEquals("Edit Address 2", str);
     }
 
     //City Testing//
@@ -96,6 +108,19 @@ public class TestEditWindow {
         String str = editWindow.dateOfBirth.getText();
         assertEquals("Edit Date of Birth", str);
     }
+
+    @Test
+    public void TestEirCodeLable() throws Exception {
+        String str = editWindow.eircodeLable.getText();
+        assertEquals("Eir Code", str);
+    }
+
+    @Test
+    public void TestEirCode() throws Exception {
+        String str = editWindow.eircode.getText();
+        assertEquals("Edit Eir Code", str);
+    }
+
 
     @Test
     public void TestDoneEditButton() throws Exception{

@@ -47,15 +47,27 @@ public class TestSearchWindow {
 
     //Address Testing//
     @Test
-    public void TestAddressLable() throws Exception {
-        String str = searchWindow.addressLable.getText();
-        assertEquals("Address", str);
+    public void TestAddress1Lable() throws Exception {
+        String str = searchWindow.address1Lable.getText();
+        assertEquals("Address 1", str);
     }
 
     @Test
-    public void TestAddress() throws Exception {
-        String str = searchWindow.address.getText();
+    public void TestAddress1() throws Exception {
+        String str = searchWindow.address1.getText();
         assertEquals("123 Fake street", str);
+    }
+
+    @Test
+    public void TestAddress2Lable() throws Exception {
+        String str = searchWindow.address2Lable.getText();
+        assertEquals("Address 2", str);
+    }
+
+    @Test
+    public void TestAddress2() throws Exception {
+        String str = searchWindow.address2.getText();
+        assertEquals("Westside", str);
     }
 
     //City Testing//

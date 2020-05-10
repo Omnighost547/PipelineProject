@@ -7,8 +7,8 @@ import java.lang.reflect.Field;
 
 public class SearchWindow implements ActionListener{
 
-    JLabel firstName,lastName,address,city, phoneNumber,dateOfBirth;
-    JLabel firstNameLable,lastNameLable,addressLable,cityLable,phoneNumberLable,dateOfBirthLable, contactbook;
+    JLabel firstName,lastName,address1,address2,city,phoneNumber,dateOfBirth,eircode;
+    JLabel firstNameLable,lastNameLable,address1Lable,address2Lable,cityLable,phoneNumberLable,dateOfBirthLable,eircodeLable,contactbook;
     JButton editContact, deleteContact, backToContactBook;
 
     SearchWindow(){
@@ -35,31 +35,42 @@ public class SearchWindow implements ActionListener{
         lastName = new JLabel("Gusani");
         lastName.setBounds(150,70,200,20);
 
-        addressLable = new JLabel("Address");
-        addressLable.setBounds(50,90,150,20);
+        address1Lable = new JLabel("Address 1");
+        address1Lable.setBounds(50,90,150,20);
         //Get Address From DataBase
-        address = new JLabel("123 Fake street");
-        address.setBounds(150,90,200,20);
+        address1 = new JLabel("123 Fake street");
+        address1.setBounds(150,90,200,20);
+
+        address2Lable = new JLabel("Address 2");
+        address2Lable.setBounds(50,110,150,20);
+        //Get Address From DataBase
+        address2 = new JLabel("Westside");
+        address2.setBounds(150,110,200,20);
 
         cityLable = new JLabel("City");
-        cityLable.setBounds(50,110,150,20);
+        cityLable.setBounds(50,130,150,20);
         //Get City From DataBase
         city = new JLabel("Galway");
-        city.setBounds(150,110,200,20);
+        city.setBounds(150,130,200,20);
 
         phoneNumberLable = new JLabel("Phone Number");
-        phoneNumberLable.setBounds(50,130,150,20);
+        phoneNumberLable.setBounds(50,150,150,20);
         //Get Phone Number From DataBase
         phoneNumber = new JLabel("087 430 7730");
-        phoneNumber.setBounds(150,130,200,20);
+        phoneNumber.setBounds(150,150,200,20);
 
         dateOfBirthLable = new JLabel("Date of Birth");
-        dateOfBirthLable.setBounds(50,150,150,20);
+        dateOfBirthLable.setBounds(50,170,150,20);
         dateOfBirth = new JLabel("April 5th");
-        dateOfBirth.setBounds(150,150,200,20);
+        dateOfBirth.setBounds(150,170,200,20);
+
+        eircodeLable = new JLabel("Eir Code");
+        eircodeLable.setBounds(50,190,150,20);
+        eircode = new JLabel("HN81 HHH");
+        eircode.setBounds(150,190,200,20);
 
         editContact = new JButton("Edit Contact");
-        editContact.setBounds(0,200,200,50);
+        editContact.setBounds(0,220,200,50);
         editContact.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -70,16 +81,16 @@ public class SearchWindow implements ActionListener{
 
 
         deleteContact = new JButton("Delete Contact");
-        deleteContact.setBounds( 200,200,200,50);
+        deleteContact.setBounds( 200,220,200,50);
         deleteContact.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //Call the Delete contact from Database Function Here//
+                //TODO: Call the Delete contact from Database Function Here
             }
         });
 
         backToContactBook = new JButton("Contact Book");
-        backToContactBook.setBounds( 100,250,200,50);
+        backToContactBook.setBounds( 100,270,200,50);
         backToContactBook.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -94,19 +105,23 @@ public class SearchWindow implements ActionListener{
         f.add(firstName);
         f.add(lastNameLable);
         f.add(lastName);
-        f.add(addressLable);
-        f.add(address);
+        f.add(address1Lable);
+        f.add(address1);
+        f.add(address2Lable);
+        f.add(address2);
         f.add(cityLable);
         f.add(city);
         f.add(phoneNumberLable);
         f.add(phoneNumber);
         f.add(dateOfBirthLable);
         f.add(dateOfBirth);
+        f.add(eircodeLable);
+        f.add(eircode);
         f.add(editContact);
         f.add(deleteContact);
         f.add(backToContactBook);
 
-        f.setSize(415,350);
+        f.setSize(415,370);
         f.setLayout(null);
         f.setVisible(true);
     }
@@ -128,7 +143,7 @@ public class SearchWindow implements ActionListener{
 
          */
     }
-    //public static void main(String[] args) {
-    //    new SearchWindow();
-    //}
+    public static void main(String[] args) {
+        new SearchWindow();
+    }
 }

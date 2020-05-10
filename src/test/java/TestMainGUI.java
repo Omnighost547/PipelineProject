@@ -47,15 +47,27 @@ public class TestMainGUI {
 
     //Address Testing//
     @Test
-    public void TestAddressLable() throws Exception {
-        String str = mainGUI.addressLable.getText();
-        assertEquals("Address", str);
+    public void TestAddress1Lable() throws Exception {
+        String str = mainGUI.address1Lable.getText();
+        assertEquals("Address 1", str);
     }
 
     @Test
-    public void TestAddress() throws Exception {
-        String str = mainGUI.address.getText();
-        assertEquals("Enter Address", str);
+    public void TestAddress1() throws Exception {
+        String str = mainGUI.address1.getText();
+        assertEquals("Enter Address 1", str);
+    }
+
+    @Test
+    public void TestAddress2Lable() throws Exception {
+        String str = mainGUI.address2Lable.getText();
+        assertEquals("Address 2", str);
+    }
+
+    @Test
+    public void TestAddress2() throws Exception {
+        String str = mainGUI.address2.getText();
+        assertEquals("Enter Address 2", str);
     }
 
     //City Testing//
@@ -95,6 +107,18 @@ public class TestMainGUI {
     public void TestDOB() throws Exception {
         String str = mainGUI.dateOfBirth.getText();
         assertEquals("Enter Data of Birth", str);
+    }
+
+    @Test
+    public void TestEirCodeLable() throws Exception {
+        String str = mainGUI.eircodeLable.getText();
+        assertEquals("Eir Code", str);
+    }
+
+    @Test
+    public void TestEirCode() throws Exception {
+        String str = mainGUI.eircode.getText();
+        assertEquals("Enter Eir Code", str);
     }
 
     //Not sure if this is right//
