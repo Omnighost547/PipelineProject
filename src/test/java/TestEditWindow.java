@@ -1,7 +1,7 @@
-import com.thoughtworks.selenium.DefaultSelenium;
-import com.thoughtworks.selenium.Selenium;
-import org.junit.After;
-import org.junit.Before;
+//import com.thoughtworks.selenium.DefaultSelenium;
+//import com.thoughtworks.selenium.Selenium;
+//import org.junit.After;
+//import org.junit.Before;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -11,7 +11,6 @@ import java.security.PublicKey;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TestEditWindow {
-    private Selenium selenium;
     EditWindow editWindow;
 
     @BeforeEach

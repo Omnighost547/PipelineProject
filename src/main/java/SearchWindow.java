@@ -7,15 +7,16 @@ import java.lang.reflect.Field;
 
 public class SearchWindow implements ActionListener{
 
-    JLabel firstName,lastName,address1,address2,city,phoneNumber,dateOfBirth,eircode;
+    JLabel firstName, lastName,address1,address2,city,phoneNumber,dateOfBirth,eircode;
     JLabel firstNameLable,lastNameLable,address1Lable,address2Lable,cityLable,phoneNumberLable,dateOfBirthLable,eircodeLable,contactbook;
     JButton editContact, deleteContact, backToContactBook;
 
     SearchWindow(){
-
-        JFrame f= new JFrame();
-        Contact c = new Contact();
+        JFrame f = new JFrame();
+        database d = new database();
         MainGUI m = new MainGUI();
+        ContactController contactController = new ContactController();
+        //Contact c = new Contact(m.firstName.getText(), m.phoneNumber.getText());
         //f.setBackground(Color.GREEN);
 
         contactbook = new JLabel("Search Contact");
@@ -23,13 +24,11 @@ public class SearchWindow implements ActionListener{
         Font bigFont = contactbook.getFont().deriveFont(Font.BOLD, 20f);
         contactbook.setFont(bigFont);
 
-
         firstNameLable = new JLabel("First Name");
         firstNameLable.setBounds(50,50,150,20);
         //Get Name From DataBase
-        firstName = new JLabel(m.firstName.getText());
+        firstName = new JLabel();
         firstName.setBounds(150,50,200,20);
-
 
         lastNameLable = new JLabel("Last Name");
         lastNameLable.setBounds(50,70,150,20);
@@ -81,13 +80,14 @@ public class SearchWindow implements ActionListener{
             }
         });
 
-
         deleteContact = new JButton("Delete Contact");
         deleteContact.setBounds( 200,220,200,50);
         deleteContact.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //TODO: Call the Delete contact from Database Function Here
+                boolean test;
+                test = contactController.deleteContact(firstName.getText());
             }
         });
 
@@ -98,7 +98,6 @@ public class SearchWindow implements ActionListener{
             public void actionPerformed(ActionEvent e) {
                 new MainGUI();
                 f.dispose();
-
             }
         });
 

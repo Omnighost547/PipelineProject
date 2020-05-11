@@ -12,6 +12,7 @@ public class EditWindow implements ActionListener {
     EditWindow() {
 
         JFrame f = new JFrame();
+        ContactController contactController = new ContactController();
         //f.setBackground(Color.RED);
 
         contactbook = new JLabel("Edit Details");
@@ -74,12 +75,16 @@ public class EditWindow implements ActionListener {
             public void actionPerformed(ActionEvent e) {
                 //TODO:save details into database//
                 //go back to homepage//
+
+                int result;
+                result = contactController.saveContact(firstName.getText(), lastName.getText(), address1.getText(),address2.getText(),
+                        city.getText(), phoneNumber.getText(),dateOfBirth.getText(), eircode.getText());
                 MainGUI mainGUI = new MainGUI();
                 f.dispose();
             }
         });
 
-        backToContactBook = new JButton("Contact Book");
+        backToContactBook = new JButton("Cancel Editing");
         backToContactBook.setBounds(200, 220, 200, 50);
         backToContactBook.addActionListener(new ActionListener() {
             @Override

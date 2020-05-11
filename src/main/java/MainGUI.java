@@ -1,3 +1,5 @@
+import sun.awt.windows.WPrinterJob;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -12,6 +14,10 @@ public class MainGUI implements ActionListener {
     MainGUI() {
 
         JFrame f = new JFrame();
+        //Contact c = new Contact();
+        ContactController contactController = new ContactController();
+        //System.out.println(c);
+        database d = new database();
         f.setBackground(Color.RED);
 
         contactbook = new JLabel("Contact Book");
@@ -21,8 +27,7 @@ public class MainGUI implements ActionListener {
 
         firstNameLable = new JLabel("First Name");
         firstNameLable.setBounds(50, 50, 150, 20);
-        //The Value in here is test, thats why testing was good.//
-        firstName = new JTextField("pual");
+        firstName = new JTextField("Fatmir");
         firstName.setBounds(150, 50, 200, 20);
 
         lastNameLable = new JLabel("Last Name");
@@ -65,26 +70,61 @@ public class MainGUI implements ActionListener {
         addContact.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //Functins//
-                //String message = addContact(name,second name,city);
-                ContactController contactController = new ContactController();
-                contactController.saveContact(firstName.getText(), lastName.getText(), address1.getText(),address2.getText(),
+                int result;
+                result = contactController.saveContact(firstName.getText(), lastName.getText(), address1.getText(),address2.getText(),
                         city.getText(), phoneNumber.getText(),dateOfBirth.getText(), eircode.getText());
 
-                System.out.println(firstName.getText());
+                if(result == 0)
+                {
+                    System.out.println("Contact Saved");
+                }
+                if(result == 1)
+                {
+                    System.out.println("Issus with Name");
+                }
+                if(result == 2)
+                {
+                    System.out.println("Issus with last name");
+                }
+                if(result == 3)
+                {
+                    System.out.println("Issus with address");
+                }
+                if(result == 4)
+                {
+                    System.out.println("Issus with Name");
+                }
+                if(result == 5)
+                {
+                    System.out.println("Issus with Name");
+                }
+
+
+
+                /*
+                contactController.searchContact(firstName.getText());
+                contactController.deleteContact(firstName.getText());
+
+                System.out.println(contactController.searchContact(firstName.getText()));
+
+                System.out.println(contactController.deleteContact(firstName.getText()));
+                //Contact c = new Contact(firstName.getText(), phoneNumber.getText());
+                //c.setName(firstName.getText());
+                System.out.println(contactController.saveContact(firstName.getText(), lastName.getText(), address1.getText(),address2.getText(),
+                        city.getText(), phoneNumber.getText(),dateOfBirth.getText(), eircode.getText()));
+
+                 */
             }
         });
 
         searchContact = new JButton("Search Contact");
         searchContact.setBounds(200, 220, 200, 50);
-
-        //searchContact.addActionListener(this);
         searchContact.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                firstName.getText();
+                Contact c = contactController.searchContact(firstName.getText());
+                System.out.println(c);
                 new SearchWindow();
-
                 f.dispose();
             }
         });
