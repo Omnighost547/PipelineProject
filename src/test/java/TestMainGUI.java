@@ -1,12 +1,9 @@
-//import com.thoughtworks.selenium.DefaultSelenium;
-//import com.thoughtworks.selenium.Selenium;
-//import org.junit.After;
-//import org.junit.Before;
+//Name : Fatmir Gusani
+//Date : 11.05.2020
+//This code test the MainGUI
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import javax.swing.*;
-import java.security.PublicKey;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -18,102 +15,112 @@ public class TestMainGUI {
              mainGUI = new MainGUI();
     }
 
-    //First Name Testing//
+    //First Name Testing Label//
     @Test
-    public void TestFirstNameLable() throws Exception {
-        String str = mainGUI.firstNameLable.getText();
+    public void TestFirstNameLabel() throws Exception {
+        String str = mainGUI.firstNameLabel.getText();
         assertEquals("First Name", str);
     }
 
+    //First Name Testing//
     @Test
     public void TestFirstName() throws Exception {
         String str = mainGUI.firstName.getText();
-        assertEquals("", str);
+        assertEquals("Fatmir", str);
     }
 
-    //Last Name Testing//
+    //Last Name Testing Label//
     @Test
-    public void TestLastNameLable() throws Exception {
-        String str = mainGUI.lastNameLable.getText();
+    public void TestLastNameLabel() throws Exception {
+        String str = mainGUI.lastNameLabel.getText();
         assertEquals("Last Name", str);
     }
 
+    //Last Name Testing//
     @Test
     public void TestLastName() throws Exception {
         String str = mainGUI.lastName.getText();
         assertEquals("", str);
     }
 
-    //Address Testing//
+    //Address 1 Testing Label//
     @Test
-    public void TestAddress1Lable() throws Exception {
-        String str = mainGUI.address1Lable.getText();
+    public void TestAddress1Label() throws Exception {
+        String str = mainGUI.address1Label.getText();
         assertEquals("Address 1", str);
     }
 
+    //Address 1 Testing//
     @Test
     public void TestAddress1() throws Exception {
         String str = mainGUI.address1.getText();
         assertEquals("", str);
     }
 
+    //Address 2 Testing Label//
     @Test
-    public void TestAddress2Lable() throws Exception {
-        String str = mainGUI.address2Lable.getText();
+    public void TestAddress2Label() throws Exception {
+        String str = mainGUI.address2Label.getText();
         assertEquals("Address 2", str);
     }
 
+    //Address 2 Testing//
     @Test
     public void TestAddress2() throws Exception {
         String str = mainGUI.address2.getText();
         assertEquals("", str);
     }
 
-    //City Testing//
+    //City Testing Label//
     @Test
-    public void TestCityLable() throws Exception {
-        String str = mainGUI.cityLable.getText();
+    public void TestCityLabel() throws Exception {
+        String str = mainGUI.cityLabel.getText();
         assertEquals("City", str);
     }
 
+    //City Testing//
     @Test
     public void TestCity() throws Exception {
         String str = mainGUI.city.getText();
         assertEquals("", str);
     }
 
-    //Phone Number Testing//
+    //Phone Number Testing Label//
     @Test
-    public void TestPhoneNumberLable() throws Exception {
-        String str = mainGUI.phoneNumberLable.getText();
+    public void TestPhoneNumberLabel() throws Exception {
+        String str = mainGUI.phoneNumberLabel.getText();
         assertEquals("Phone Number", str);
     }
 
+    //Phone Number Testing//
     @Test
     public void TestPhoneNumber() throws Exception {
         String str = mainGUI.phoneNumber.getText();
         assertEquals("", str);
     }
 
-    //Date of Birth Testing//
+    //Date of Birth Testing Label//
     @Test
-    public void TestDOBLable() throws Exception {
-        String str = mainGUI.dateOfBirthLable.getText();
+    public void TestDOBLabel() throws Exception {
+        String str = mainGUI.dateOfBirthLabel.getText();
         assertEquals("Date of Birth", str);
     }
 
+    //Date of Birth Testing//
     @Test
     public void TestDOB() throws Exception {
         String str = mainGUI.dateOfBirth.getText();
         assertEquals("", str);
     }
 
+    //EirCode Testing Label//
     @Test
-    public void TestEirCodeLable() throws Exception {
-        String str = mainGUI.eircodeLable.getText();
+    public void TestEirCodeLabel() throws Exception {
+        String str = mainGUI.eircodeLabel.getText();
         assertEquals("Eir Code", str);
     }
 
+    //EirCode Testing//
     @Test
     public void TestEirCode() throws Exception {
         String str = mainGUI.eircode.getText();

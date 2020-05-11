@@ -1,3 +1,8 @@
+//Name : Fatmir Gusani
+//Date : 11.05.2020
+//This code Creates the edit gui for the user to change details.
+//Details can be edited
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -5,8 +10,8 @@ import java.lang.reflect.Field;
 
 public class EditWindow implements ActionListener {
 
-    JTextField firstName, lastName, address1, address2, city, phoneNumber, dateOfBirth,eircode;
-    JLabel firstNameLable, lastNameLable, address1Lable,address2Lable, cityLable, phoneNumberLable, dateOfBirthLable,eircodeLable, contactbook;
+    JTextField firstName, lastName, address1, address2, city, phoneNumber, dateOfBirth, eircode;
+    JLabel firstNameLabel, lastNameLabel, address1Label, address2Label, cityLabel, phoneNumberLabel, dateOfBirthLabel, eircodeLabel, contactbook;
     JButton doneEdit, backToContactBook;
 
     EditWindow() {
@@ -20,51 +25,51 @@ public class EditWindow implements ActionListener {
         Font bigFont = contactbook.getFont().deriveFont(Font.BOLD, 20f);
         contactbook.setFont(bigFont);
 
-        firstNameLable = new JLabel("First Name");
-        firstNameLable.setBounds(50, 50, 150, 20);
+        firstNameLabel = new JLabel("First Name");
+        firstNameLabel.setBounds(50, 50, 150, 20);
         //Get Name to edit//
         firstName = new JTextField("");
         firstName.setBounds(150, 50, 200, 20);
 
-        lastNameLable = new JLabel("Last Name");
-        lastNameLable.setBounds(50, 70, 150, 20);
+        lastNameLabel = new JLabel("Last Name");
+        lastNameLabel.setBounds(50, 70, 150, 20);
         //Get Name to edit//
         lastName = new JTextField("");
         lastName.setBounds(150, 70, 200, 20);
 
-        address1Lable = new JLabel("Address 1");
-        address1Lable.setBounds(50, 90, 150, 20);
+        address1Label = new JLabel("Address 1");
+        address1Label.setBounds(50, 90, 150, 20);
         //Get Address to edit//
         address1 = new JTextField("");
         address1.setBounds(150, 90, 200, 20);
 
-        address2Lable = new JLabel("Address 2");
-        address2Lable.setBounds(50, 110, 150, 20);
+        address2Label = new JLabel("Address 2");
+        address2Label.setBounds(50, 110, 150, 20);
         //Get Address to edit//
         address2 = new JTextField("");
         address2.setBounds(150, 110, 200, 20);
 
-        cityLable = new JLabel("City");
-        cityLable.setBounds(50, 130, 150, 20);
+        cityLabel = new JLabel("City");
+        cityLabel.setBounds(50, 130, 150, 20);
         //Get City to edit//
         city = new JTextField("");
         city.setBounds(150, 130, 200, 20);
 
-        phoneNumberLable = new JLabel("Phone Number");
-        phoneNumberLable.setBounds(50, 150, 150, 20);
+        phoneNumberLabel = new JLabel("Phone Number");
+        phoneNumberLabel.setBounds(50, 150, 150, 20);
         //Get PhoneNumber to edit//5
         phoneNumber = new JTextField("");
         phoneNumber.setBounds(150, 150, 200, 20);
 
-        dateOfBirthLable = new JLabel("Date of Birth");
-        dateOfBirthLable.setBounds(50, 170, 150, 20);
+        dateOfBirthLabel = new JLabel("Date of Birth");
+        dateOfBirthLabel.setBounds(50, 170, 150, 20);
         //Get Date of birth to edit//
         dateOfBirth = new JTextField("");
         dateOfBirth.setBounds(150, 170, 200, 20);
 
-        eircodeLable = new JLabel("Eir Code");
-        eircodeLable.setBounds(50, 190, 150, 20);
-        //Get Date of birth to edit//
+        eircodeLabel = new JLabel("Eir Code");
+        eircodeLabel.setBounds(50, 190, 150, 20);
+        //Get eir code to edit//
         eircode = new JTextField("");
         eircode.setBounds(150, 190, 200, 20);
 
@@ -77,8 +82,8 @@ public class EditWindow implements ActionListener {
                 //go back to homepage//
 
                 int result;
-                result = contactController.saveContact(firstName.getText(), lastName.getText(), address1.getText(),address2.getText(),
-                        city.getText(), phoneNumber.getText(),dateOfBirth.getText(), eircode.getText());
+                result = contactController.saveContact(firstName.getText(), lastName.getText(), address1.getText(), address2.getText(),
+                        city.getText(), phoneNumber.getText(), dateOfBirth.getText(), eircode.getText());
                 MainGUI mainGUI = new MainGUI();
                 f.dispose();
             }
@@ -95,21 +100,21 @@ public class EditWindow implements ActionListener {
         });
 
         f.add(contactbook);
-        f.add(firstNameLable);
+        f.add(firstNameLabel);
         f.add(firstName);
-        f.add(lastNameLable);
+        f.add(lastNameLabel);
         f.add(lastName);
-        f.add(address1Lable);
+        f.add(address1Label);
         f.add(address1);
-        f.add(address2Lable);
+        f.add(address2Label);
         f.add(address2);
-        f.add(cityLable);
+        f.add(cityLabel);
         f.add(city);
-        f.add(phoneNumberLable);
+        f.add(phoneNumberLabel);
         f.add(phoneNumber);
-        f.add(dateOfBirthLable);
+        f.add(dateOfBirthLabel);
         f.add(dateOfBirth);
-        f.add(eircodeLable);
+        f.add(eircodeLabel);
         f.add(eircode);
         f.add(doneEdit);
         f.add(backToContactBook);
@@ -121,7 +126,7 @@ public class EditWindow implements ActionListener {
 
     public void actionPerformed(ActionEvent e) {
     }
-
-    public static void main(String[] args) {
-        new EditWindow();
-    } }
+}
+    //public static void main(String[] args) {
+    //    new EditWindow();
+    //}
