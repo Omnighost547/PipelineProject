@@ -10,5 +10,4 @@ public interface ContactList {
     boolean deleteContact(String name);
 
     Contact searchContact(String name);
-
 }
