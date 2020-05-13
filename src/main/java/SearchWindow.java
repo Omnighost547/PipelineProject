@@ -15,10 +15,12 @@ import java.lang.reflect.Field;
 public class SearchWindow implements ActionListener {
 
     JLabel firstName, lastName, address1, address2, city, phoneNumber, dateOfBirth, eircode;
-    JLabel firstNameLabel, lastNameLabel, address1Label, address2Label, cityLabel, phoneNumberLabel, dateOfBirthLabel, eircodeLabel, contactbook;
+    JLabel firstNameLabel, lastNameLabel, address1Label, address2Label, cityLabel, phoneNumberLabel, dateOfBirthLabel,
+            eircodeLabel, contactbook;
     JButton editContact, deleteContact, backToContactBook;
 
-    SearchWindow() {
+    SearchWindow()
+    {
         JFrame f = new JFrame();
         //database d = new database();
         MainGUI m = new MainGUI();
@@ -79,7 +81,8 @@ public class SearchWindow implements ActionListener {
         editContact.setBounds(0, 220, 200, 50);
         editContact.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(ActionEvent e)
+            {
                 EditWindow editWindow = new EditWindow();
                 f.dispose();
             }
@@ -89,7 +92,8 @@ public class SearchWindow implements ActionListener {
         deleteContact.setBounds(200, 220, 200, 50);
         deleteContact.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(ActionEvent e)
+            {
                 boolean test;
                 test = contactController.deleteContact(firstName.getText());
             }
@@ -99,7 +103,8 @@ public class SearchWindow implements ActionListener {
         backToContactBook.setBounds(100, 270, 200, 50);
         backToContactBook.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(ActionEvent e)
+            {
                 new MainGUI();
                 f.dispose();
             }
@@ -131,9 +136,10 @@ public class SearchWindow implements ActionListener {
         f.setVisible(true);
     }
 
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(ActionEvent e)
+    {
     }
 }
-    //public static void main(String[] args) {
-    //    new SearchWindow();
-    //}
+//public static void main(String[] args) {
+//    new SearchWindow();
+//}

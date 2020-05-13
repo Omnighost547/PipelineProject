@@ -13,10 +13,12 @@ import java.awt.event.*;
 public class EditWindow implements ActionListener {
 
     JTextField firstName, lastName, address1, address2, city, phoneNumber, dateOfBirth, eircode;
-    JLabel firstNameLabel, lastNameLabel, address1Label, address2Label, cityLabel, phoneNumberLabel, dateOfBirthLabel, eircodeLabel, contactbook;
+    JLabel firstNameLabel, lastNameLabel, address1Label, address2Label, cityLabel, phoneNumberLabel, dateOfBirthLabel,
+            eircodeLabel, contactbook;
     JButton doneEdit, backToContactBook;
 
-    EditWindow() {
+    EditWindow()
+    {
 
         JFrame f = new JFrame();
         ContactList contactController = InMemoryContactList.getInstance();
@@ -79,12 +81,14 @@ public class EditWindow implements ActionListener {
         doneEdit.setBounds(0, 220, 200, 50);
         doneEdit.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(ActionEvent e)
+            {
                 //TODO:save details into database//
                 //go back to homepage//
 
                 int result;
-                result = contactController.saveContact(firstName.getText(), lastName.getText(), address1.getText(), address2.getText(),
+                result = contactController.saveContact(firstName.getText(), lastName.getText(), address1.getText(),
+                        address2.getText(),
                         city.getText(), phoneNumber.getText(), dateOfBirth.getText(), eircode.getText());
                 MainGUI mainGUI = new MainGUI();
                 f.dispose();
@@ -95,7 +99,8 @@ public class EditWindow implements ActionListener {
         backToContactBook.setBounds(200, 220, 200, 50);
         backToContactBook.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(ActionEvent e)
+            {
                 MainGUI mainGUI = new MainGUI();
                 f.dispose();
             }
@@ -126,9 +131,10 @@ public class EditWindow implements ActionListener {
         f.setVisible(true);
     }
 
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(ActionEvent e)
+    {
     }
 }
-    //public static void main(String[] args) {
-    //    new EditWindow();
-    //}
+//public static void main(String[] args) {
+//    new EditWindow();
+//}

@@ -27,7 +27,8 @@ public class ContactBuilderTest {
     Contact contact;
 
     @Before
-    public void setup() {
+    public void setup()
+    {
         contactBuilder = new ContactBuilder()
                 .setFirstName(FIRST_NAME)
                 .setLastName(LAST_NAME)
@@ -43,11 +44,12 @@ public class ContactBuilderTest {
 
     @Disabled
     @Test
-    public void testContactBuilderCreatesContactSuccessfully() throws Exception {
+    public void testContactBuilderCreatesContactSuccessfully() throws Exception
+    {
         try {
             contact = contactBuilder.getContact();
 
-        } catch(Exception e) {
+        } catch (Exception e) {
             fail("Should not throw an exception");
         }
         Assertions.assertNotNull(contact);
