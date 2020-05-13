@@ -19,10 +19,12 @@ import java.lang.reflect.Field;
 public class MainGUI implements ActionListener {
 
     JTextField firstName, lastName, address1, address2, city, phoneNumber, dateOfBirth, eircode;
-    JLabel firstNameLabel, lastNameLabel, address1Label, address2Label, cityLabel, phoneNumberLabel, dateOfBirthLabel, eircodeLabel, contactbook;
+    JLabel firstNameLabel, lastNameLabel, address1Label, address2Label, cityLabel, phoneNumberLabel, dateOfBirthLabel,
+            eircodeLabel, contactbook;
     JButton addContact, searchContact;
 
-    MainGUI() {
+    MainGUI()
+    {
 
         JFrame f = new JFrame();
         ContactList contactController = InMemoryContactList.getInstance();
@@ -77,9 +79,11 @@ public class MainGUI implements ActionListener {
         addContact.setBounds(0, 220, 200, 50);
         addContact.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(ActionEvent e)
+            {
                 int result;
-                result = contactController.saveContact(firstName.getText(), lastName.getText(), address1.getText(), address2.getText(),
+                result = contactController.saveContact(firstName.getText(), lastName.getText(), address1.getText(),
+                        address2.getText(),
                         city.getText(), phoneNumber.getText(), dateOfBirth.getText(), eircode.getText());
 
                 if (result == 0) {
@@ -107,7 +111,8 @@ public class MainGUI implements ActionListener {
         searchContact.setBounds(200, 220, 200, 50);
         searchContact.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(ActionEvent e)
+            {
                 Contact c = contactController.searchContact(firstName.getText());
                 System.out.println(c);
                 new SearchWindow();
@@ -140,9 +145,10 @@ public class MainGUI implements ActionListener {
         f.setVisible(true);
     }
 
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(ActionEvent e)
+    {
     }
 }
-    //public static void main(String[] args) {
-    //    new MainGUI();
-    //}
+//public static void main(String[] args) {
+//    new MainGUI();
+//}
