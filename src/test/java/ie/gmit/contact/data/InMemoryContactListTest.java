@@ -9,46 +9,51 @@ package ie.gmit.contact.data;
 import ie.gmit.Contact;
 import junitparams.FileParameters;
 import junitparams.JUnitParamsRunner;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.runner.RunWith;
+import org.mockito.Mockito;
+import org.mockito.junit.MockitoJUnitRunner;
 
-@RunWith(JUnitParamsRunner.class)
+import static junit.framework.TestCase.assertEquals;
+
+@RunWith(MockitoJUnitRunner.class)
 public class InMemoryContactListTest {
 
-    //@Before
-    InMemoryContactList inMemoryContactList;
-    Contact contact;
-
-/*
     private static final String FIRST_NAME = "Ted";
     private static final String LAST_NAME = "Crilly";
     private static final String ADDRESS_LINE_1 = "Parochial House";
     private static final String ADDRESS_LINE_2 = "Craggy Island";
-    private static final String ADDRESS_LINE_3 = "Kinvara";
-    private static final String COUNTY = "Clare";
-    private static final String EIRCODE = "D01 F5P2";
-*/
+    private static final String CITY = "Kinvara";
+    private static final String PHONE_NUMBER = "0871234567";
+    private static final String DATE_OF_BIRTH = "13/09/1987";
+    private static final String EIR_CODE = "D01 F5P2";
 
-/*
+    InMemoryContactList inMemoryContactList;
+    Contact contact;
+
+    @Before
+    public void setup()
+    {
+//        inMemoryContactList = InMemoryContactList.getInstance();
+        inMemoryContactList = Mockito.mock(InMemoryContactList.class);
+        contact = new Contact(FIRST_NAME, LAST_NAME, ADDRESS_LINE_1, ADDRESS_LINE_2, CITY, PHONE_NUMBER, DATE_OF_BIRTH,
+                EIR_CODE);
+    }
+
+
     @DisplayName("When Contact is created, then the object is added to the persistence service")
     @Test
-    @FileParameters("src/test/resources/testDataStorage.csv")
-    public void testContactStoredSuccessfully(String firstName, String lastName, String addressLine1,
-                                              String addressLine2, String addressLine3, String county, String eirCode)
+    public void testContactStoredSuccessfully()
     {
-
-        */
-/* GIVEN: A Contact object is successfully created by the GUI/Controller/Whateverthefuck
-         * WHEN: A Contact object is saved to persistent storage
-         * THEN: The Persistent storage has increased by one item (this is the assertion)
-         *//*
-
-
-        inMemoryContactList.save(contact);
-        Assertions.assertThat
+        int result = inMemoryContactList.saveContact(FIRST_NAME, LAST_NAME, ADDRESS_LINE_1, ADDRESS_LINE_2, CITY,
+                PHONE_NUMBER, DATE_OF_BIRTH, EIR_CODE);
+        Assertions.assertEquals(result, 0);
     }
-*/
+
 
 }

@@ -17,10 +17,12 @@ public class InMemoryContactList implements ContactList {
 
     private static InMemoryContactList instance;
 
-    private InMemoryContactList() {
+    private InMemoryContactList()
+    {
     }
 
-    synchronized public static InMemoryContactList getInstance() {
+    synchronized public static InMemoryContactList getInstance()
+    {
         if (instance == null) {
             instance = new InMemoryContactList();
         }
