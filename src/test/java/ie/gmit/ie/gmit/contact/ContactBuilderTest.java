@@ -1,22 +1,15 @@
 package ie.gmit.ie.gmit.contact;
 
 import ie.gmit.Contact;
-import ie.gmit.Validator;
 import ie.gmit.contact.ContactBuilder;
-import jdk.nashorn.internal.ir.CallNode;
-import junitparams.FileParameters;
 import org.junit.Before;
-import org.junit.Rule;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import static org.junit.jupiter.api.Assertions.fail;
-import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
 public class ContactBuilderTest {
@@ -68,5 +61,4 @@ public class ContactBuilderTest {
         Assertions.assertEquals(contact.getEirCode(), EIR_CODE);
 
     }
-
 }
