@@ -7,19 +7,13 @@
 package ie.gmit.contact.data;
 
 import ie.gmit.Contact;
-import junitparams.FileParameters;
-import junitparams.JUnitParamsRunner;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
-
-import static junit.framework.TestCase.assertEquals;
 
 @RunWith(MockitoJUnitRunner.class)
 public class InMemoryContactListTest {
@@ -39,7 +33,6 @@ public class InMemoryContactListTest {
     @Before
     public void setup()
     {
-//        inMemoryContactList = InMemoryContactList.getInstance();
         inMemoryContactList = Mockito.mock(InMemoryContactList.class);
         contact = new Contact(FIRST_NAME, LAST_NAME, ADDRESS_LINE_1, ADDRESS_LINE_2, CITY, PHONE_NUMBER, DATE_OF_BIRTH,
                 EIR_CODE);
@@ -53,7 +46,5 @@ public class InMemoryContactListTest {
                 PHONE_NUMBER, DATE_OF_BIRTH, EIR_CODE);
         Assertions.assertEquals(result, 0);
     }
-
-
 
 }

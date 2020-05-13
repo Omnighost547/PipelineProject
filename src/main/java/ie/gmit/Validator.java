@@ -6,6 +6,7 @@ package ie.gmit;
  * For: Software with Tests pipeline project
  *
  */
+
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
@@ -23,60 +24,72 @@ public class Validator {
 
 
     //Validator constructor
-    public Validator(){}
+    public Validator()
+    {
+    }
+
     //function to validate name
-    public int validateName(String name){
+    public int validateName(String name)
+    {
         pattern = Pattern.compile(namePattern);
         matcher = pattern.matcher(name);
-        if(matcher.matches()){
+        if (matcher.matches()) {
             errorCode = 0;
-        }else{
+        } else {
             errorCode = 1;//
         }
         return errorCode;
     }
+
     //function to validate second name
-    public int validateSecondName(String secondName){
+    public int validateSecondName(String secondName)
+    {
         pattern = Pattern.compile(namePattern);
         matcher = pattern.matcher(secondName);
-        if(matcher.matches()){
+        if (matcher.matches()) {
             errorCode = 0;
-        }else{
+        } else {
             errorCode = 2;
         }
         return errorCode;
     }
+
     //function to validate phone number
-    public int validatePhoneNumber(String phoneNumber){
+    public int validatePhoneNumber(String phoneNumber)
+    {
         pattern = Pattern.compile(phoneNumberPattern);
         matcher = pattern.matcher(phoneNumber);
-        if(matcher.matches()){
+        if (matcher.matches()) {
             errorCode = 0;
-        }else{
+        } else {
             errorCode = 3;
         }
         return errorCode;
     }
+
     //function to validate date of birth
-    public int validateDOB(String dob){
+    public int validateDOB(String dob)
+    {
         pattern = Pattern.compile(dobPattern);
         matcher = pattern.matcher(dob);
-        if(matcher.matches()){
+        if (matcher.matches()) {
             errorCode = 0;
-        }else{
+        } else {
             errorCode = 4;
         }
         return errorCode;
     }
+
     //function to validate eirCode
-    public int validateEirCode(String eirCode){
+    public int validateEirCode(String eirCode)
+    {
         pattern = Pattern.compile(eirCodePattern);
         matcher = pattern.matcher(eirCode);
-        if(matcher.matches()){
+        if (matcher.matches()) {
             errorCode = 0;
-        }else{
+        } else {
             errorCode = 5;
         }
-        return  errorCode;
+        return errorCode;
     }
 }
