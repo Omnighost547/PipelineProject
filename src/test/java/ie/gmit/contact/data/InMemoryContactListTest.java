@@ -45,7 +45,6 @@ public class InMemoryContactListTest {
                 EIR_CODE);
     }
 
-
     @DisplayName("When Contact is created, then the object is added to the persistence service")
     @Test
     public void testContactStoredSuccessfully()
@@ -54,6 +53,7 @@ public class InMemoryContactListTest {
                 PHONE_NUMBER, DATE_OF_BIRTH, EIR_CODE);
         Assertions.assertEquals(result, 0);
     }
+
 
 
 }
