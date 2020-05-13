@@ -8,15 +8,22 @@ package ie.gmit.contact.data;
 
 import ie.gmit.Contact;
 import ie.gmit.contact.ContactBuilder;
-import ie.gmit.pm.Validator;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ContactPersistenceService {
+public class ContactPersistenceService extends ContactList {
 
     private static final List<Contact> contactDb = new ArrayList<>();
 
+    private ContactPersistenceService() {
+    }
+
+    public static ContactPersistenceService getInstance() {
+        return
+    }
+
+    @Override
     public int saveContact(String name, String secondName, String addressLine1, String addressLine2, String city, String phoneNumber, String dob, String eirCode)
     {
         try {
@@ -32,6 +39,7 @@ public class ContactPersistenceService {
         return 0;
     }
 
+    @Override
     public boolean deleteContact(String name)
     {
         Contact contactToDelete = contactDb.stream()
@@ -45,11 +53,13 @@ public class ContactPersistenceService {
         return true;
     }
 
+    @Override
     public Contact searchContact(String name)
     {
         return contactDb.stream()
                 .filter(contact -> name.equals(contact.getName()))
                 .findFirst().orElse(null);
     }
+
 
 }
