@@ -5,7 +5,7 @@ import ie.gmit.Validator;
 
 public class ContactBuilder {
 
-    private final Validator validator = new Validator();
+    private static final Validator validator = new Validator();
     private int errorCode = 0;
 
     private String firstName;
