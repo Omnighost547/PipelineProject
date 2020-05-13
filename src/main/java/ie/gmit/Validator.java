@@ -1,6 +1,5 @@
 package ie.gmit;
 
-
 /*
  * This class verifies is user entering correct format data
  * Author: Paulius Miliunas
