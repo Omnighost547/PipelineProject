@@ -1,4 +1,5 @@
 /*
+ * Singleton class for an in-memory list of contacts
  * Tommy Kearns - G00320978
  * 2020-05-07
  * Software Engineering with Test
@@ -12,16 +13,21 @@ import ie.gmit.contact.ContactBuilder;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ContactPersistenceService extends ContactList {
+public class InMemoryContactList implements ContactList {
+
+    private static InMemoryContactList instance;
+
+    private InMemoryContactList() {
+    }
+
+    synchronized public static InMemoryContactList getInstance() {
+        if (instance == null) {
+            instance = new InMemoryContactList();
+        }
+        return instance;
+    }
 
     private static final List<Contact> contactDb = new ArrayList<>();
-
-    private ContactPersistenceService() {
-    }
-
-    public static ContactPersistenceService getInstance() {
-        return
-    }
 
     @Override
     public int saveContact(String name, String secondName, String addressLine1, String addressLine2, String city, String phoneNumber, String dob, String eirCode)

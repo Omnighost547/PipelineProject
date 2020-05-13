@@ -1,7 +1,7 @@
 package ie.gmit.contact;
 
 import ie.gmit.Contact;
-import ie.gmit.pm.Validator;
+import ie.gmit.Validator;
 
 public class ContactBuilder {
 

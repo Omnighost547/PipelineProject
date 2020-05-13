@@ -4,6 +4,9 @@
 //Details can be deleted
 //Details can be edited
 
+import ie.gmit.contact.data.ContactList;
+import ie.gmit.contact.data.InMemoryContactList;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -17,9 +20,9 @@ public class SearchWindow implements ActionListener {
 
     SearchWindow() {
         JFrame f = new JFrame();
-        database d = new database();
+        //database d = new database();
         MainGUI m = new MainGUI();
-        ContactController contactController = new ContactController();
+        ContactList contactController = InMemoryContactList.getInstance();
 
         contactbook = new JLabel("Search Contact");
         contactbook.setBounds(150, 10, 150, 20);
