@@ -7,6 +7,10 @@
 //Details can be added into database
 //Details can be search into database
 
+import ie.gmit.Contact;
+import ie.gmit.contact.data.ContactList;
+import ie.gmit.contact.data.InMemoryContactList;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -21,8 +25,8 @@ public class MainGUI implements ActionListener {
     MainGUI() {
 
         JFrame f = new JFrame();
-        ContactController contactController = new ContactController();
-        database d = new database();
+        ContactList contactController = InMemoryContactList.getInstance();
+        //database d = new database();
 
         contactbook = new JLabel("Contact Book");
         contactbook.setBounds(150, 10, 150, 20);

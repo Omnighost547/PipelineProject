@@ -15,10 +15,10 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.runner.RunWith;
 
 @RunWith(JUnitParamsRunner.class)
-public class ContactPersistenceServiceTest {
+public class InMemoryContactListTest {
 
     //@Before
-    ContactPersistenceService contactPersistenceService;
+    InMemoryContactList inMemoryContactList;
     Contact contact;
 
 /*
@@ -31,6 +31,7 @@ public class ContactPersistenceServiceTest {
     private static final String EIRCODE = "D01 F5P2";
 */
 
+/*
     @DisplayName("When Contact is created, then the object is added to the persistence service")
     @Test
     @FileParameters("src/test/resources/testDataStorage.csv")
@@ -38,13 +39,16 @@ public class ContactPersistenceServiceTest {
                                               String addressLine2, String addressLine3, String county, String eirCode)
     {
 
-        /* GIVEN: A Contact object is successfully created by the GUI/Controller/Whateverthefuck
+        */
+/* GIVEN: A Contact object is successfully created by the GUI/Controller/Whateverthefuck
          * WHEN: A Contact object is saved to persistent storage
          * THEN: The Persistent storage has increased by one item (this is the assertion)
-         */
+         *//*
 
-        contactPersistenceService.save(contact);
+
+        inMemoryContactList.save(contact);
         Assertions.assertThat
     }
+*/
 
 }

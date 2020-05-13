@@ -1,4 +1,5 @@
 /*
+ * Singleton class for an in-memory list of contacts
  * Tommy Kearns - G00320978
  * 2020-05-07
  * Software Engineering with Test
@@ -8,15 +9,27 @@ package ie.gmit.contact.data;
 
 import ie.gmit.Contact;
 import ie.gmit.contact.ContactBuilder;
-import ie.gmit.pm.Validator;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ContactPersistenceService {
+public class InMemoryContactList implements ContactList {
+
+    private static InMemoryContactList instance;
+
+    private InMemoryContactList() {
+    }
+
+    synchronized public static InMemoryContactList getInstance() {
+        if (instance == null) {
+            instance = new InMemoryContactList();
+        }
+        return instance;
+    }
 
     private static final List<Contact> contactDb = new ArrayList<>();
 
+    @Override
     public int saveContact(String name, String secondName, String addressLine1, String addressLine2, String city, String phoneNumber, String dob, String eirCode)
     {
         try {
@@ -32,6 +45,7 @@ public class ContactPersistenceService {
         return 0;
     }
 
+    @Override
     public boolean deleteContact(String name)
     {
         Contact contactToDelete = contactDb.stream()
@@ -45,11 +59,13 @@ public class ContactPersistenceService {
         return true;
     }
 
+    @Override
     public Contact searchContact(String name)
     {
         return contactDb.stream()
                 .filter(contact -> name.equals(contact.getName()))
                 .findFirst().orElse(null);
     }
+
 
 }

@@ -3,10 +3,12 @@
 //This code Creates the edit gui for the user to change details.
 //Details can be edited
 
+import ie.gmit.contact.data.ContactList;
+import ie.gmit.contact.data.InMemoryContactList;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.lang.reflect.Field;
 
 public class EditWindow implements ActionListener {
 
@@ -17,7 +19,7 @@ public class EditWindow implements ActionListener {
     EditWindow() {
 
         JFrame f = new JFrame();
-        ContactController contactController = new ContactController();
+        ContactList contactController = InMemoryContactList.getInstance();
         //f.setBackground(Color.RED);
 
         contactbook = new JLabel("Edit Details");
